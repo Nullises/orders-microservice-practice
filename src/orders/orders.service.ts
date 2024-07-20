@@ -79,7 +79,7 @@ export class OrdersService extends PrismaClient implements OnModuleInit {
         OrderItem: order.OrderItem.map((orderItem) => ({
           ...orderItem,
           name: products.find((product) => product.id === orderItem.productId)
-            .name,
+            .product,
         })),
       };
     } catch (error) {
@@ -147,7 +147,7 @@ export class OrdersService extends PrismaClient implements OnModuleInit {
       OrderItem: order.OrderItem.map((orderItem) => ({
         ...orderItem,
         name: products.find((product) => product.id === orderItem.productId)
-          .name,
+          .product,
       })),
     };
   }
